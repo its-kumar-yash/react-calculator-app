@@ -3,7 +3,7 @@ import "./Calculator.css";
 
 const Calculator = () => {
   const [calculatedResult, setCalculatedResult] = useState("");
-
+  
   const clickHandler = (event) => {
     setCalculatedResult(calculatedResult.concat(event.target.value));
     console.log(calculatedResult);
@@ -14,7 +14,19 @@ const Calculator = () => {
   }
 
   const backspaceHandler = () => {
-    setCalculatedResult(calculatedResult.slice(0, calculatedResult.length - 1));
+    setCalculatedResult(calculatedResult.slice(0, calculatedResult.length - 1)); // or -1
+  }
+
+  const calculate = () => {
+
+    try{
+      setCalculatedResult(eval(calculatedResult).toString());
+    }catch(err){
+      setCalculatedResult("Invalid Input!");
+    }
+
+
+    
   }
 
   return (
@@ -41,7 +53,7 @@ const Calculator = () => {
           <button onClick={clickHandler} value="+" className="highlight">+</button>
           <button onClick={clickHandler} value="0">0</button>
           <button onClick={clickHandler} value=".">.</button>
-          <button onClick={clickHandler} id="equal" className="highlight">=</button>
+          <button onClick={calculate} id="equal" className="highlight">=</button>
         </div>
       </div>
     </React.Fragment>
