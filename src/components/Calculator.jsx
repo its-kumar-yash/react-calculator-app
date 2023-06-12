@@ -3,13 +3,18 @@ import "./Calculator.css";
 
 const Calculator = () => {
   const [calculatedResult, setCalculatedResult] = useState("");
-  
+  const [isError, setIsError] = useState(false);
+
   const clickHandler = (event) => {
+    if(isError){
+      return;
+    }
     setCalculatedResult(calculatedResult.concat(event.target.value));
     console.log(calculatedResult);
   }
 
   const clearHandler = () => {
+    setIsError(false);
     setCalculatedResult("");
   }
 
@@ -18,15 +23,13 @@ const Calculator = () => {
   }
 
   const calculate = () => {
-
     try{
       setCalculatedResult(eval(calculatedResult).toString());
     }catch(err){
+      setIsError(true);
       setCalculatedResult("Invalid Input!");
     }
 
-
-    
   }
 
   return (
