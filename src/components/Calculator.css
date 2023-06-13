@@ -1,80 +1,165 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
-*{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    width: 256px;
-    text-align: center;
-    border: 10px solid #101116;
-    background: #101116;
-    border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 256px;
+  text-align: center;
+  border: 10px solid #101116;
+  background: #101116;
+  border-radius: 5px;
 }
 
 .keypad {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(60px, auto);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60px, auto);
 }
 
-input[type="text"] {
-    height: 75px;
-    width: 249px;
-    background-color: #10111600;
-    border: 0px;
-    color: #ffffff;
-    text-align: right;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: 1px;
+.user-input {
+  height: 75px;
+  width: 249px;
+  background-color: #10111600;
+  border: 0px;
+  color: #ffffff;
+  text-align: right;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 #clear {
-    grid-column: 1/3;
-    grid-row: 1;
-    color: #262834;
+  grid-column: 1/3;
+  grid-row: 1;
+  color: #262834;
 }
 
 #equal {
-    grid-column: 3/5;
-    grid-row: 5;
-    color: #262834;
+  grid-column: 3/5;
+  grid-row: 5;
+  color: #262834;
 }
 
 #backspace {
-    color: #262834;
+  color: #262834;
 }
 
 button {
-    border: none;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    background: #262834;
-    color: #ffffff;
-    font-weight: 500;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #262834;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #64656d;
 }
 
 input:focus,
 input:active,
 button:focus,
 button:active {
-    outline: none;
+  outline: none;
 }
 
 .highlight {
-    background: #56cbdb;
+  background: #56cbdb;
+}
+
+/* Light Theme Color*/
+.light-container {
+  border: 10px solid #61b7ff;
+  background-color: #61b7ff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.light-input {
+  background: #c3f8ff;
+  color: black;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.light-highlight {
+  background: #ffdc71;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.light-btn {
+  background-color: #fff6bf;
+  color: #fc8b00;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.light-highlight:focus,
+.light-btn:focus {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.light-btn:hover {
+  background-color: #ffa433;
+  color: #fff6bf;
+}
+
+.light-highlight:hover {
+  background-color: #f8a95a;
+}
+
+/*Dark Theme color*/
+
+.dark-input {
+  background-color: #04bfe4;
+  box-shadow: rgba(219, 217, 217, 0.779) 0px 1px 2px 0px,
+    rgba(200, 200, 200, 0.76) 0px 1px 3px 1px;
+}
+
+.dark-highlight {
+  background: #03c988;
+  color: black;
+  box-shadow: rgba(156, 155, 155, 0.217) 0px 4px 12px;
+}
+
+.dark-container {
+  border: 10px solid #13005a;
+  background-color: #13005a;
+  box-shadow: rgba(255, 255, 255, 0.603) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.635) 0px 2px 16px 0px;
+}
+
+.dark-btn {
+  background-color: #1c82ad;
+  box-shadow: rgba(156, 155, 155, 0.217) 0px 4px 12px;
+}
+
+.dark-btn:focus {
+  box-shadow: rgba(255, 252, 252, 0.363) 0px 5px 15px;
+}
+
+.dark-btn:hover {
+  background-color: #0090fc;
+}
+
+.dark-highlight:hover {
+  background: #05ffac;
 }
