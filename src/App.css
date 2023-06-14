@@ -1,7 +1,21 @@
-.light-mode {
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.toggle-container {
+    position: relative;
+    top: 2.4rem;
+    left: 5rem;
+}
+
+#light-mode {
     background-color: #FFFBEB;
 }
 
-.dark-mode {
+#dark-mode {
     background-color: #9DB2BF;
 }

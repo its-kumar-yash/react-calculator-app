@@ -1,33 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
 import Calculator from "./components/Calculator";
 import ToggleSwitch from "./components/ToggleSwitch";
+import ReactSwitch from "react-switch";
+
+//exporting theme context to use theme properties
+//on all components without passing props
+export const ThemeContext = createContext(null);
 
 function App() {
+  const [isLight, setIsLight] = useState("light-mode");
 
-  const [isLight, setIsLight] = useState(true);
-  const bodyElement = document.querySelector("body");
-  bodyElement.classList.add("light-mode");
-  //   console.log(bodyElement);
   const toggleHandler = () => {
-    // console.log("Toggle switch");
-    if (isLight) {
-      bodyElement.classList.add("dark-mode");
-      bodyElement.classList.remove("light-mode");
-      setIsLight(false);
-    } else {
-      bodyElement.classList.add("light-mode");
-      bodyElement.classList.remove("dark-mode");
-      setIsLight(true);
-    }
+    setIsLight((curr) => (curr === "light-mode" ? "dark-mode" : "light-mode"));
   };
 
-
   return (
-    <div className="App">
-      <ToggleSwitch toggle={toggleHandler} />
-      <Calculator mode={isLight} />
-    </div>
+    <ThemeContext.Provider value={{ isLight, toggleHandler }}>
+      <div className="app flex" id={isLight}>
+        <div className="flex">
+          <div className="toggle-container">
+            <ToggleSwitch />
+          </div>
+          <Calculator />
+          {/* <ReactSwitch
+            onChange={toggleHandler}
+            checked={isLight === "dark-mode"}
+          /> */}
+        </div>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

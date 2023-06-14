@@ -5,11 +5,11 @@
   font-size: 20px;
 }
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .container {
   top: 50%;
