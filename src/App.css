@@ -22,3 +22,9 @@
 #dark-mode {
     background-color: #9DB2BF;
 }
+
+@media (max-width: 750px) {
+    .app {
+        width: fit-content;
+    }
+}
