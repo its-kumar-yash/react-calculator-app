@@ -6,7 +6,7 @@ const ToggleSwitch = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <div>
+    <div className="toggle-container">
       <label class="switch">
         <span class="sun">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

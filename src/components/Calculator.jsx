@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Calculator.css";
 import { ThemeContext } from "../App";
+import ToggleSwitch from "./ToggleSwitch";
 
 const Calculator = () => {
   const theme = useContext(ThemeContext);
@@ -43,6 +44,7 @@ const Calculator = () => {
   return (
     <React.Fragment>
       <div className={"container " + (theme.isLight === "light-mode" ? "light-container" : "dark-container")}>
+        <ToggleSwitch />
         <form>
           <input type="text" value={calculatedResult} className={"user-input " + (theme.isLight === "light-mode" ? "light-input" : "dark-input")} />
         </form>

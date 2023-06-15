@@ -1,8 +1,9 @@
 import React, { useState, createContext } from "react";
 import "./App.css";
 import Calculator from "./components/Calculator";
-import ToggleSwitch from "./components/ToggleSwitch";
-import ReactSwitch from "react-switch";
+import Header from "./components/Header";
+// import mathSvg from "./assets/math.svg";
+// import calSvg from "./assets/cal.svg";
 
 //exporting theme context to use theme properties
 //on all components without passing props
@@ -18,15 +19,13 @@ function App() {
   return (
     <ThemeContext.Provider value={{ isLight, toggleHandler }}>
       <div className="app flex" id={isLight}>
-        <div className="flex">
-          <div className="toggle-container">
-            <ToggleSwitch />
+        <div className="main-container">
+          <div className="header-container">
+            <Header />
           </div>
-          <Calculator />
-          {/* <ReactSwitch
-            onChange={toggleHandler}
-            checked={isLight === "dark-mode"}
-          /> */}
+          <div className="calculator-container">
+            <Calculator />
+          </div>
         </div>
       </div>
     </ThemeContext.Provider>

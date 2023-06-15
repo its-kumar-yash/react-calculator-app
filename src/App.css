@@ -6,10 +6,13 @@
     flex-direction: column;
 }
 
-.toggle-container {
-    position: relative;
-    top: 2.4rem;
-    left: 5rem;
+.toggle-flex{
+    display: flex;
+}
+
+.header-container {
+    width: 34rem;
+    margin: 1rem;
 }
 
 #light-mode {
